@@ -4,18 +4,43 @@
     <title><%= title %></title>
 </head>
 <body>
-<% if ( userFullName ) { %>
-<h2>Hello <%= userFullName %></h2>
+<% if ( user ) { %>
+<h2>Hello <%= user.fullName %></h2>
 <a href="/signout">Sign Out</a>
 <% } else { %>
 <a href="/signup">Signup</a>
 <a href="/signin">Signin</a>
 <% } %>
-<section>
-    <input type="text" id="text1" ng-model="name">
-    <input type="text" id="text2" ng-model="name">
+<section ng-view>
+
 </section>
-<script type="text/javascript" src="lib/angular/angular.js"></script>
-<script type="text/javascript" src="application.js"></script>
+
+<script type="text/javascript">
+    window.user = <%- user || 'null' %>;
+</script>
+
+<!--Angular libraries-->
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
+<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+
+<!--Modules-->
+<script type="text/javascript" src="/example/example.client.module.js"></script>
+<script type="text/javascript" src="/users/users.client.module.js"></script>
+
+
+<!--Services-->
+<script type="text/javascript" src="/example/services/example.client.services.js"></script>
+<script type="text/javascript" src="/users/services/authentication.client.services.js"></script>
+
+<!--Controllers-->
+
+<script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+
+<!--Routes-->
+<script type="text/javascript" src="/example/config/example.client.route.js"></script>
+
+
+<!--Main application-->
+<script type="text/javascript" src="/application.js"></script>
 </body>
 </html>

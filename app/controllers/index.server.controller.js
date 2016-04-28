@@ -6,6 +6,7 @@ exports.render = function (req, res) {
 
     res.render('index', {
         title: 'hello world',
-        userFullName: req.user ? req.user.fullName : ''
+        user: req.user ? JSON.stringify(req.user) : ''
+
     });
 };
