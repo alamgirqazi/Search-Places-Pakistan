@@ -66,54 +66,19 @@ exports.signout = function (req, res) {
     req.logout();
     res.redirect('/');
 };
+exports.requiresLogin = function (req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    } else {
+        return res.status(401).send({message: 'User is not Logged In'});
 
-//exports.create = function (req, res, next) {
-//    var user = new User(req.body);
-//    user.save(function (err) {
-//        if (err) {
-//            return next(err);
-//        } else {
-//            res.json(user);
-//        }
-//    });
-//};
-//exports.list = function (req, res, next) {
-//    User.find({}, function (err, users) {
-//        if (err) {
-//            next(err);
-//        } else {
-//            res.json(users);
-//        }
-//    })
-//};
-//exports.read = function (req, res) {
-//    res.json(req.user);
-//};
-//exports.userByID = function (req, res, next, id) {
-//    User.findOne({_id: id}, function (err, user) {
-//        if (err) {
-//            next(err);
-//        } else {
-//            req.user = user;
-//            next();
-//        }
-//    });
-//};
-//exports.delete = function (req, res, next) {
-//    req.user.remove(function (err) {
-//        if (err) {
-//            return next(err);
-//        } else {
-//            res.json(req.user);
-//        }
-//    });
-//};
-//exports.update = function (req, res, next) {
-//    User.findByIdAndUpdate(req.user.id, req.body, function (err, user) {
-//        if (err) {
-//            next(err);
-//        } else {
-//            res.json(user);
-//        }
-//    });
-//};
+    }
+};
+exports.hasAuthorization = function (req, res, next) {
+    if (req.article.creater.id === req.user.id) {
+        return next();
+    } else {
+        return res.status(403).send({message: 'User is not authorized In'});
+
+    }
+};
