@@ -20,6 +20,7 @@ var getErrorMessage = function (err) {
     }
     return message;
 };
+
 exports.renderSignin = function (req, res, next) {
     if (!req.user) {
         res.render('signin', {
@@ -79,6 +80,5 @@ exports.hasAuthorization = function (req, res, next) {
         return next();
     } else {
         return res.status(403).send({message: 'User is not authorized In'});
-
     }
 };

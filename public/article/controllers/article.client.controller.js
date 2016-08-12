@@ -13,7 +13,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
         });
     };
     $scope.update = function () {
-        $scope.article.$update(function () {
+    $scope.article.$update(function () {
             $location.path('articles/' + $scope.article._id);
         }, function (errorResponse) {
             $scope.error = errorResponse.data.message;

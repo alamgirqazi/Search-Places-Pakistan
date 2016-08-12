@@ -11,7 +11,6 @@ var config = require('./config'),
     flash = require('connect-flash'),
     passport = require('passport');
 
-
 module.exports = function (db) {
     var app = express();
     var server = http.createServer(app);
@@ -52,6 +51,8 @@ module.exports = function (db) {
     require('../app/routes/index.server.routes')(app);
     require('../app/routes/user.server.routes')(app);
     require('../app/routes/articles.server.routes')(app);
+    require('../app/routes/newview.server.routes')(app);
+    require('../app/routes/maps.server.routes')(app);
 
 
     app.use(express.static('./public'));
