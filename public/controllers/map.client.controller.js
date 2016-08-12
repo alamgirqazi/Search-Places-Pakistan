@@ -10,6 +10,7 @@ angular.module('mean')
 
         });
 
+
         // New Algo
         var Rm = 3961; // mean radius of the earth (miles) at 39 degrees from the equator
         var Rk = 6373; // mean radius of the earth (km) at 39 degrees from the equator
@@ -73,16 +74,24 @@ console.log('Distance in kilometers: ' + km);
             componentRestrictions: {country: 'pk'},
             types: ['establishment']
         };
-
+var abc;
         $scope.myFunc = function () {
            //while(search_term_value!== null) {
                 console.log('val changed');
                 console.log('lat and lng of selected place: ');
+            if(!$scope.place.geometry){
+                console.log('return');
+                // $scope.place=abc;
+return;
+            }
+       //     abc=$scope.place;
                 console.log($scope.place.geometry.location.lat(), $scope.place.geometry.location.lng());
-                console.log('distance: ');
-                // console.log(getDistanceFromLatLonInMiles($scope.origLati, $scope.origLongi, $scope.place.geometry.location.lat(), $scope.place.geometry.location.lng()));
-            findDistance();
+                // console.log('distance: ');
 
-            //}
+            console.log(" name " + $scope.place.name);
+            console.log(" formatted_address:   " + $scope.formatted_address);
+            console.log(" formatted_phone_number  " + $scope.place.formatted_phone_number);
+             console.log(" international_phone_number " + $scope.place.international_phone_number);
+            findDistance();
             };
     });

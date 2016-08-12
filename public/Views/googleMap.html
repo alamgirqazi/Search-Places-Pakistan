@@ -1,5 +1,5 @@
 <div ng-controller="exampleController">
-<ng-map zoom="11" center="[40.74, -74.18]" >
+<ng-map zoom="11" center="[40.74, -74.18]">
     <marker  position="current"  animation="Animation.BOUNCE" centered="true"></marker>
     <!--position="current" ng-repeat="p in vm.positions" position="{{p}}"-->
 </ng-map>
@@ -19,7 +19,6 @@
             <form class="form">
                 <input g-places-autocomplete type="text"
                        ng-model="place"
-                       ng-show="!somefield.length"
                        ng-change="myFunc()"
                        placeholder="Search Business"
                        force-selection="true"
