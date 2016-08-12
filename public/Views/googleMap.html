@@ -1,4 +1,4 @@
-<div ng-controller="googleMapController">
+<div ng-controller="exampleController">
 <ng-map zoom="11" center="[40.74, -74.18]" >
     <marker  position="current"  animation="Animation.BOUNCE" centered="true"></marker>
     <!--position="current" ng-repeat="p in vm.positions" position="{{p}}"-->
@@ -17,7 +17,15 @@
 
 
             <form class="form">
-                <input class="form-control" g-places-autocomplete force-selection="true" ng-change="myFunc()" options="autocompleteOptions" ng-model="place"/>
+                <input g-places-autocomplete type="text"
+                       ng-model="place"
+                       ng-show="!somefield.length"
+                       ng-change="myFunc()"
+                       placeholder="Search Business"
+                       force-selection="true"
+                       class="form-control"
+                       options="autocompleteOptions"
+                       id="search_term_value"/>    <!--<input class="form-control" g-places-autocomplete  ng-change="myFunc()" options="autocompleteOptions"  ng-model="place"/>-->
             </form>
             <h5>Result:</h5>
             <pre>{{place | json}}</pre>
