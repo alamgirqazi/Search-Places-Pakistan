@@ -4,6 +4,9 @@
 <head>
     <title><%= title %></title>
     <link rel="stylesheet" href="/css/map.css">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/lib/angular-google-places-autocomplete/src/autocomplete.css">
 </head>
 <body>
 
@@ -13,6 +16,8 @@
 <script type="text/javascript">
     window.user = <%- user || 'null' %>;
 </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsB8IzN0NzY-6D-E-J2bTNVTv95NDsx6g&libraries=places"></script>
 
 
 <!--Angular libraries-->
@@ -25,12 +30,11 @@
 <script type="text/javascript" src="/users/users.client.module.js"></script>
 <script type="text/javascript" src="/article/article.client.module.js"></script>
 
-
+<!--<script type="text/javascript" src="/lib/ngPlacesAutocomplete/ngPlacesAutocomplete.min.js"></script>-->
 
 <!--Main application-->
 <script type="text/javascript" src="/application.js"></script>
 
-<!--<script type="text/javascript" src="/lib/ngPlacesAutocomplete/ngPlacesAutocomplete.min.js"></script>-->
 
 <!--Services-->
 <script type="text/javascript" src="/example/services/example.client.services.js"></script>
@@ -39,10 +43,13 @@
 
 <!--Controllers-->
 
+
+<script type="text/javascript" src="/lib/angular-google-places-autocomplete/src/autocomplete.js"></script>
 <script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
 <script type="text/javascript" src="/article/controllers/article.client.controller.js"></script>
-<script type="text/javascript" src="/controllers/map.client.controller.js"></script>
 <script type="text/javascript" src="/controllers/googleMap.client.controller.js"></script>
+
+<script type="text/javascript" src="/controllers/map.client.controller.js"></script>
 
 
 <!--directives-->
@@ -55,7 +62,6 @@
 
 <!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>-->
 <!--callback=initMap-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsB8IzN0NzY-6D-E-J2bTNVTv95NDsx6g&libraries=places"></script>
 
 </body>
 </html>

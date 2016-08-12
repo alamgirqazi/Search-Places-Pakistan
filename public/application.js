@@ -1,5 +1,5 @@
  // var mainApplicationModuleName = 'mean';
- var mainApplicationModule = angular.module('mean', ['ngResource','ngMap','ngRoute', 'users', 'example','articles']);
+ var mainApplicationModule = angular.module('mean', ['ngResource','ngMap','google.places','ngRoute', 'users', 'example','articles']);
  mainApplicationModule.config(['$locationProvider','$routeProvider', function ($locationProvider,$routeProvider) {
     $locationProvider.hashPrefix('!');
      $routeProvider.when('/maps',

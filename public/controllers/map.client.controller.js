@@ -1,17 +1,15 @@
-// angular.module('mean', ['ngPlacesAutocomplete'])
-//     .controller('exampleController', function ($scope, $log) {
-//         $scope.query = "";
-//         $scope.paOptions = {
-//             updateModel : true
-//         };
-//         $scope.paTrigger = {};
-//         $scope.paDetails = {};
-//         $scope.placesCallback = function (error, details) {
-//             console.log($scope.query);
-//             if (error) {
-//                 return console.error(error);
-//             }
-//             $scope.paDetails = details;
-//         };
-//
-//     });
+angular.module('mean')
+    .controller('exampleController',  function ($scope) {
+        $scope.place = null;
+        $scope.autocompleteOptions = {
+            componentRestrictions: { country: 'pk' },
+            types: ['establishment']
+        }
+
+        $scope.myFunc = function() {
+console.log('val changed');
+        console.log($scope.place.geometry.location.lat(),$scope.place.geometry.location.lng());
+        };
+
+        });
+

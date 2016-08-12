@@ -2,40 +2,44 @@
 <ng-map zoom="11" center="[40.74, -74.18]" >
     <marker position="current" animation="Animation.BOUNCE" centered="true"></marker>
 </ng-map>
+
+
 </div>
 
 <br>
 <hr>
 
-<!--<input  type="text"-->
-        <!--ng-model="query"-->
-        <!--ng-places-autocomplete-->
-        <!--pa-options="optionsObject"-->
-        <!--pa-trigger="triggerFunc"-->
-        <!--pa-on-place-ready="callbackFunction"-->
-<!--/>-->
+<div ng-controller="exampleController">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Basic Usage</h1>
+
+
+            <form class="form">
+                <input class="form-control" g-places-autocomplete force-selection="true" ng-change="myFunc()" options="autocompleteOptions" ng-model="place"/>
+            </form>
+            <h5>Result:</h5>
+            <pre>{{place | json}}</pre>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--<div ng-controller="googleMapController">-->
+    <!--<ng-map zoom="14 center="[40.74, -74.18]" >-->
+        <!--<marker position="current" animation="Animation.BOUNCE" centered="true"></marker>-->
+    <!--</ng-map>-->
+<!--</div>-->
+
+
+
+
 
 <!--<br><br><br>-->
 <!--<hr>-->
 
 
-<!--<div ng-controller="exampleController">-->
-    <!--<form>-->
-        <!--<input type="text"-->
-               <!--ng-places-autocomplete-->
-               <!--ng-model="query"-->
-               <!--pa-options="paOptions"-->
-               <!--pa-on-place-ready="placesCallback"-->
-               <!--pa-trigger="paTrigger"-->
-        <!--/>-->
-        <!--<button ng-click="paTrigger()" type="submit">Send</button>-->
-    <!--</form>-->
-    <!--<div>-->
-        <!--<h1>Details: </h1>-->
-
-        <!--<p>{{paDetails}}</p>-->
-    <!--</div>-->
-<!--</div>-->
 
 
 <!--<ng-map zoom="11" center="[0,0]">-->
