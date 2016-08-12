@@ -4,11 +4,11 @@ angular.module('mean')
         $scope.autocompleteOptions = {
             componentRestrictions: { country: 'pk' },
             types: ['establishment']
-        }
-
+        };
         $scope.myFunc = function() {
 console.log('val changed');
         console.log($scope.place.geometry.location.lat(),$scope.place.geometry.location.lng());
+
         };
 
         });
