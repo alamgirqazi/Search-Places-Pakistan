@@ -1,5 +1,5 @@
 angular.module('mean')
-    .controller('exampleController',  function ($scope,NgMap) {
+    .controller('exampleController',  function ($scope,NgMap,$http) {
 
         NgMap.getMap().then(function (map) {
             // console.log(map.getCenter());
@@ -10,6 +10,16 @@ angular.module('mean')
 
         });
 
+        // $http({
+        //     method: 'POST',
+        //     url:'/saveGoogleSearch', }).
+        //         then (successCallback);
+        //
+        //
+        // var successCallback = function (response) {
+        //
+        //
+        // };
 
         // New Algo
         var Rm = 3961; // mean radius of the earth (miles) at 39 degrees from the equator
@@ -49,6 +59,8 @@ angular.module('mean')
 console.log('Distance in miles: ' + mi);
 console.log('Distance in kilometers: ' + km);
 
+            $scope.miles = mi;
+            $scope.kms = km;
 
         }
 
@@ -90,8 +102,12 @@ return;
 
             console.log(" name " + $scope.place.name);
             console.log(" formatted_address:   " + $scope.formatted_address);
+            console.log(" adr_address:   " + $scope.adr_address);
             console.log(" formatted_phone_number  " + $scope.place.formatted_phone_number);
              console.log(" international_phone_number " + $scope.place.international_phone_number);
+             console.log(" Vicinity " + $scope.place.vicinity);
+             console.log(" Url " + $scope.place.url);
             findDistance();
             };
+
     });
