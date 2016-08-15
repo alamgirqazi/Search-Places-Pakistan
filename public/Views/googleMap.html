@@ -1,24 +1,25 @@
+
+<h4 style="text-align: center;color:rgb(84,110,122)"> Find Locations on Google Map</h4>
 <div ng-controller="exampleController">
-<ng-map zoom="11" center="[40.74, -74.18]">
+    <div class="row">
+    <div class="col-md-6">
+    <ng-map zoom="11" center="[40.74, -74.18]">
     <marker  position="current" centered="true"></marker>
     <!--position="current" ng-repeat="p in vm.positions" position="{{p}}"-->
 </ng-map>
-    <!--animation="Animation.BOUNCE"-->
+
 </div>
+    <!--animation="Animation.BOUNCE"-->
+    <div class="col-md-6">
 
 
-<br>
-<hr>
-
-<div ng-controller="exampleController">
+    <div ng-controller="exampleController">
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Basic Usage</h1>
-
-
             <form class="form">
                 <input g-places-autocomplete type="text"
+                       onclick="this.focus();this.select()"
                        ng-model="place"
                        ng-change="myFunc()"
                        placeholder="Search Business"
@@ -33,29 +34,46 @@
     </div>
 
     <div class="row">
-        <div class="col s12 m6">
+        <div class="col s12 m12">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
                     <span class="card-title" style="text-decoration: underline"> {{place.name}}</span>
                     <br>
-                     <p class="flow-text">{{place.formatted_address}}</p>
+                     <h6 >{{place.formatted_address}}</h6>
                     <br>
                      <!--<p class="flow-text">{{place.Vicinity }}</p>-->
-                     <p class="flow-text">{{place.formatted_phone_number}}</p>
-                     <p class="flow-text">{{place.international_phone_number }}</p>
+                     <p >{{place.formatted_phone_number}}</p>
+                     <p >{{place.international_phone_number }}</p>
+                    <!--class="flow-text"                    -->
                     <hr>
-                     <p >{{'Distance in Miles: ' + miles}}</p>
-                     <p >Distance in KMs: {{kms}}</p>
-
+                    <div ng-show="place.miles">
+                    <p >{{'Distance in Miles: ' + place.miles}}</p>
+                     <p >Distance in KMs: {{place.kms}}</p>
+                     <!--<p >{{place.msg}}</p>-->
+               </div>
+                        <br>
+                    <div ng-show="place.msg" class="alert alert-danger" role="alert">
+                        <a href="" class="alert-link">{{place.msg}}</a>
+                    </div>
                        </div>
                 <div class="card-action">
                     <a href="{{place.url}}" target="_blank" >Find on Google Map</a>
                 </div>
             </div>
+        <div>
         </div>
     </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
 
 <!--<div ng-controller="googleMapController">-->
     <!--<ng-map zoom="14 center="[40.74, -74.18]" >-->
@@ -71,3 +89,4 @@
            <!--stroke-color='#FF0000' stroke-opacity="0.8"stroke-weight="2"-->
            <!--center="current-position" radius="4000" editable="true" ></shape>-->
 <!--</ng-map>-->
+    </div>

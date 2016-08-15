@@ -10,16 +10,19 @@ angular.module('mean')
 
         });
 
-        // $http({
-        //     method: 'POST',
-        //     url:'/saveGoogleSearch', }).
-        //         then (successCallback);
-        //
-        //
-        // var successCallback = function (response) {
-        //
-        //
-        // };
+        $http({
+            method: 'POST',
+            url:'/api/googleSearch'}).
+                then (successCallback);
+
+        // $http.post('url',data).then(function (res) {
+        //     console.log(res);
+        // });
+
+
+        var successCallback = function (response) {
+
+        };
 
         // New Algo
         var Rm = 3961; // mean radius of the earth (miles) at 39 degrees from the equator
@@ -56,11 +59,23 @@ angular.module('mean')
             // display the result
             // frm.mi.value = mi;
             // frm.km.value = km;
-console.log('Distance in miles: ' + mi);
-console.log('Distance in kilometers: ' + km);
 
-            $scope.miles = mi;
-            $scope.kms = km;
+            if ( $scope.origLati === 0)
+            {
+                $scope.place.miles = undefined;
+                $scope.place.kms = undefined;
+
+$scope.place.msg = "Please allow the browser to get your current location to calculate the distance";
+            }
+            else {
+                $scope.place.miles = mi;
+                $scope.place.kms = km;
+
+            }
+
+
+            console.log('Distance in miles: ' +  $scope.place.miles);
+console.log('Distance in kilometers: ' +   $scope.place.kms);
 
         }
 
@@ -100,6 +115,7 @@ return;
                 console.log($scope.place.geometry.location.lat(), $scope.place.geometry.location.lng());
                 // console.log('distance: ');
 
+
             console.log(" name " + $scope.place.name);
             console.log(" formatted_address:   " + $scope.formatted_address);
             console.log(" adr_address:   " + $scope.adr_address);
@@ -108,6 +124,10 @@ return;
              console.log(" Vicinity " + $scope.place.vicinity);
              console.log(" Url " + $scope.place.url);
             findDistance();
-            };
 
+
+            $http.post('/api/googleSearch',$scope.place).then(function (res) {
+                console.log(res);
+            });
+            };
     });
