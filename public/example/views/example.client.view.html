@@ -1,8 +1,29 @@
 <section ng-controller="ExampleController">
     <div data-ng-show="!authentication.user">
-        <a href="/signup">Signup</a>
-        <a href="/signin">Signin</a>
+
+        <h4 style="color:white; text-align: center">Welcome to Google Maps Search! </h4>
+        <div class="row">
+            <div >
+                <br>
+
+            <div class="col s4 m4">
+                <div class="card blue-grey darken-1" style="left: 100%">
+                    <div class="card-content white-text">
+
+                        <a style="left: 30%;" class="waves-effect waves-light btn" href="/signup">Signup</a>
+                        <br><br><br><br>
+                        <a style="left: 30%;" class="waves-effect waves-light btn" href="/signin">Signin</a>
+                        <br><br><br><br>
+                        <a style="left: 10%;" class="waves-effect waves-light btn" href="/">Continue Without Logging In </a>
+                        <br><br><br><br>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
     <div data-ng-show="authentication.user">
         <h1>Hello <span data-ng-bind="authentication.user.fullName"></
             span></h1>

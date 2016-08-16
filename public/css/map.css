@@ -3,11 +3,11 @@ html, body {
     height: 100%;
     /*margin: 0;*/
     padding: 20px;
-background-color:rgb(176,190,197) ;
+background-color:rgb(55,71,79);
 }
 input[type=text],input:not([type]),input[type=search]
 {
-    /*color:white;*/
+    color:white;
 }
 #map {
     height: 60%;

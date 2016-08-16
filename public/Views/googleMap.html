@@ -1,18 +1,17 @@
 
-<h4 style="text-align: center;color:rgb(84,110,122)"> Find Locations on Google Map</h4>
+<h4 style="text-align: center;color:white"> Find Locations on Google Map</h4>
 <div ng-controller="exampleController">
     <div class="row">
-    <div class="col-md-6">
-    <ng-map zoom="11" center="[40.74, -74.18]">
+    <div class="col-md-5">
+        <br>
+    <ng-map style="height: 500px;" zoom="11" center="[40.74, -74.18]">
     <marker  position="current" centered="true"></marker>
     <!--position="current" ng-repeat="p in vm.positions" position="{{p}}"-->
 </ng-map>
 
 </div>
     <!--animation="Animation.BOUNCE"-->
-    <div class="col-md-6">
-
-
+    <div class="col-md-7">
     <div ng-controller="exampleController">
 <div class="container">
     <div class="row">
@@ -22,7 +21,7 @@
                        onclick="this.focus();this.select()"
                        ng-model="place"
                        ng-change="myFunc()"
-                       placeholder="Search Business"
+                       placeholder="Search Places in Pakistan"
                        force-selection="true"
                        class="form-control"
                        options="autocompleteOptions"
@@ -57,7 +56,7 @@
                     </div>
                        </div>
                 <div class="card-action">
-                    <a href="{{place.url}}" target="_blank" >Find on Google Map</a>
+                    <a class="waves-effect waves-light btn" href="{{place.url}}" target="_blank" >Find on Google Map</a>
                 </div>
             </div>
         <div>
@@ -65,17 +64,8 @@
     </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-<!--<div ng-controller="googleMapController">-->
+</div>
+        <!--<div ng-controller="googleMapController">-->
     <!--<ng-map zoom="14 center="[40.74, -74.18]" >-->
         <!--<marker position="current" animation="Animation.BOUNCE" centered="true"></marker>-->
     <!--</ng-map>-->

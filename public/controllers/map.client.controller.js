@@ -125,7 +125,6 @@ return;
              console.log(" Url " + $scope.place.url);
             findDistance();
 
-
             $http.post('/api/googleSearch',$scope.place).then(function (res) {
                 console.log(res);
             });

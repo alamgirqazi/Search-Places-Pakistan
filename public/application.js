@@ -4,7 +4,8 @@
     $locationProvider.hashPrefix('!');
      $routeProvider.when('/maps',
          {
-             templateUrl:'views/maps.html'
+             templateUrl:'views/maps.html',
+             authorization: true
          });
      $routeProvider.when('/googleMap',
          {
