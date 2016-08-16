@@ -7,6 +7,10 @@ module.exports = function (app) {
 
     app.route('/api/googleSearch')
         .post( index.create);
+
+    app.route('/api/googleSearch/savedSearches')
+        .get( index.showSearches);
+
 };
 
 // user.requiresLogin,

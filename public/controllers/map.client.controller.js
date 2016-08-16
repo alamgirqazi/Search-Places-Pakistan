@@ -1,6 +1,7 @@
 angular.module('mean')
-    .controller('exampleController',  function ($scope,NgMap,$http) {
+    .controller('exampleController',  function ($scope,NgMap,$http,Authentication) {
 
+        $scope.Authentication = Authentication;
         NgMap.getMap().then(function (map) {
             // console.log(map.getCenter());
              console.log(map.getCenter().lat(), map.getCenter().lng());
@@ -9,20 +10,6 @@ angular.module('mean')
             $scope.origLongi = map.getCenter().lng();
 
         });
-
-        $http({
-            method: 'POST',
-            url:'/api/googleSearch'}).
-                then (successCallback);
-
-        // $http.post('url',data).then(function (res) {
-        //     console.log(res);
-        // });
-
-
-        var successCallback = function (response) {
-
-        };
 
         // New Algo
         var Rm = 3961; // mean radius of the earth (miles) at 39 degrees from the equator
@@ -65,7 +52,7 @@ angular.module('mean')
                 $scope.place.miles = undefined;
                 $scope.place.kms = undefined;
 
-$scope.place.msg = "Please allow the browser to get your current location to calculate the distance";
+$scope.place.msg = "Please allow the browser to get your current location to calculate the distance and refresh your browser";
             }
             else {
                 $scope.place.miles = mi;
@@ -125,8 +112,20 @@ return;
              console.log(" Url " + $scope.place.url);
             findDistance();
 
-            $http.post('/api/googleSearch',$scope.place).then(function (res) {
-                console.log(res);
-            });
-            };
+
+           if(Authentication.user) {
+
+               $http.post('/api/googleSearch', $scope.place).then(function (res) {
+                   console.log(res);
+               });
+
+               $http.get('/api/googleSearch/savedSearches').then(function (res) {
+                   console.log(res);
+               });
+
+                  }
+
+
+            }
+            ;
     });

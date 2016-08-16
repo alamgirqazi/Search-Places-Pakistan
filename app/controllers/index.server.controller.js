@@ -20,6 +20,17 @@ exports.render = function (req, res) {
     });
 };
 
+exports.showSearches = function (req,res) {
+    GoogleSearch.find().sort('-created').populate('creator').exec(function (err, googleSearch) {
+        if (err) {
+            return res.status(400).send({message: getErrorMessages(err)});
+        } else {
+            res.json(googleSearch);
+        }
+    });
+
+};
+
 
 exports.create = function (req, res) {
     var googleSearch = new GoogleSearch(req.body);

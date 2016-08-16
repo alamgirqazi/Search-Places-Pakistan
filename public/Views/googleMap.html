@@ -18,6 +18,7 @@
         <div class="col-md-12">
             <form class="form">
                 <input g-places-autocomplete type="text"
+                       autocomplete="off"
                        onclick="this.focus();this.select()"
                        ng-model="place"
                        ng-change="myFunc()"
@@ -63,6 +64,9 @@
         </div>
     </div>
 </div>
+
+    <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="#" >See recent searches</a>
+
 </div>
 </div>
         <!--<div ng-controller="googleMapController">-->
@@ -79,4 +83,6 @@
            <!--stroke-color='#FF0000' stroke-opacity="0.8"stroke-weight="2"-->
            <!--center="current-position" radius="4000" editable="true" ></shape>-->
 <!--</ng-map>-->
+    </div>
+        </div>
     </div>
