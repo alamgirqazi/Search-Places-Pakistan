@@ -2,27 +2,25 @@ angular.module('mean')
     .controller('exampleController', function ($scope, NgMap, $http, Authentication) {
 
         $scope.Authentication = Authentication;
+        // $scope.currentPage = 0;
+        // $scope.pageSize = 10;
+        // // $scope.data = [];
+        // $scope.numberOfPages = function () {
+        //     return Math.ceil($scope.data.length / $scope.pageSize);
+        // };
 
-        //
         $scope.searchRecent = function () {
             $http.get('/api/googleSearch/savedSearches').then(function (res) {
                 $scope.returnedSearches = res.data;
                 console.log('button pressed');
                 console.log($scope.returnedSearches);
-            });
 
-            // $scope.showResults = function(res)
-            // {
-            //     str = JSON.stringify(res.data);
-            //     str = JSON.stringify(res.data, null, 4); // (Optional) beautiful indented output.
-            //     console.log('str' + str); // Logs output to de
-            // };
-
+                     });
         };
 
         NgMap.getMap().then(function (map) {
-            // console.log(map.getCenter());
             console.log(map.getCenter().lat(), map.getCenter().lng());
+
             // Original Latitude and Longitude
             $scope.origLati = map.getCenter().lat();
             $scope.origLongi = map.getCenter().lng();
@@ -116,20 +114,7 @@ angular.module('mean')
                 // $scope.place=abc;
                 return;
             }
-            //     abc=$scope.place;
-            console.log($scope.place.geometry.location.lat(), $scope.place.geometry.location.lng());
-            // console.log('distance: ');
-
-
-            console.log(" name " + $scope.place.name);
-            console.log(" formatted_address:   " + $scope.formatted_address);
-            console.log(" adr_address:   " + $scope.adr_address);
-            console.log(" formatted_phone_number  " + $scope.place.formatted_phone_number);
-            console.log(" international_phone_number " + $scope.place.international_phone_number);
-            console.log(" Vicinity " + $scope.place.vicinity);
-            console.log(" Url " + $scope.place.url);
-            findDistance();
-
+             findDistance();
             if (Authentication.user) {
 
                 $http.post('/api/googleSearch', $scope.place).then(function (res) {
