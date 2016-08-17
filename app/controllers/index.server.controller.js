@@ -35,7 +35,7 @@ exports.showSearches = function (req,res) {
 exports.create = function (req, res) {
     var googleSearch = new GoogleSearch(req.body);
     console.log(req.body);
-    googleSearch.placename = req.body.placename;
+    googleSearch.name = req.body.name;
     googleSearch.formatted_address = req.body.formatted_address;
     googleSearch.formatted_phone_number = req.body.formatted_phone_number;
     googleSearch.distance_miles = req.body.distance_miles;

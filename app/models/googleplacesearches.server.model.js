@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var GoogleSearchSchema = new Schema({
-    placename: {
+    name: {
         type: String,
         Default: ''
     },
