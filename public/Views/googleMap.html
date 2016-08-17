@@ -1,10 +1,20 @@
-
-<h4 style="text-align: center;color:white"> Find Locations on Google Map</h4>
 <div ng-controller="exampleController">
+
+<div class="row">
+    <div class="col m10">
+        <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="/Signin" >Home</a>
+        <h4 style="text-align: center;color:white"> Find Locations on Google Map</h4>
+
+    </div>
+    <div class="col m2">
+
+    <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="/signout" >SignOut!</a>
+</div>
+</div>
     <div class="row">
     <div class="col-md-5">
         <br>
-    <ng-map style="height: 500px;" zoom="11" center="[40.74, -74.18]">
+    <ng-map style="height: 450px;" zoom="11" center="[40.74, -74.18]">
     <marker  position="current" centered="true"></marker>
     <!--position="current" ng-repeat="p in vm.positions" position="{{p}}"-->
 </ng-map>
@@ -59,13 +69,14 @@
                 <div class="card-action">
                     <a class="waves-effect waves-light btn" href="{{place.url}}" target="_blank" >Find on Google Map</a>
                 </div>
+
             </div>
         <div>
         </div>
     </div>
 </div>
 
-    <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="#" >See recent searches</a>
+    <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="#" >recent searches</a>
 
 </div>
 </div>

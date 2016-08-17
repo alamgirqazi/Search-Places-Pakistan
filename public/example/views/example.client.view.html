@@ -1,11 +1,9 @@
 <section ng-controller="ExampleController">
     <div data-ng-show="!authentication.user">
-
         <h4 style="color:white; text-align: center">Welcome to Google Maps Search! </h4>
         <div class="row">
             <div >
                 <br>
-
             <div class="col s4 m4">
                 <div class="card blue-grey darken-1" style="left: 100%">
                     <div class="card-content white-text">
@@ -25,12 +23,32 @@
     </div>
 
     <div data-ng-show="authentication.user">
-        <h1>Hello <span data-ng-bind="authentication.user.fullName"></
-            span></h1>
-        <a href="/signout">Signout</a>
+
+        <div class="row">
+        <div class="col m10">
+            <h2 style="color:white">Hello, <span data-ng-bind="authentication.user.fullName"></span></h2>
+        </div>
+            <div class="col m2">
+        <a class="waves-effect waves-light btn" href="/signout">Signout</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col m3" style="alignment: center">
+                <br>
+                <div class="card blue-grey darken-1" style="">
+        <br>
         <ul>
-            <li><a href="/#!/articles">List Articles</a></li>
-            <li><a href="/#!/articles/create">Create Article</a></li>
+            <!--<input type="submit" class="waves-effect waves-light btn" style="left: 30%;" name="Sign In"/>-->
+
+            <li><a class="waves-effect waves-light btn" href="/#!/googleMap">Google Map Search</a></li>
+          <br><br>
+            <li><button class="waves-effect waves-light btn">Show Recent Searches</button></li>
+            <br><br>
+            <!--<li><a href="/#!/articles/create">Create Article</a></li>-->
         </ul>
     </div>
+                </div>
+</div>
+</div>
 </section>
