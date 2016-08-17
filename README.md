@@ -1,10 +1,13 @@
-### Search Google Places in Pakistan
+# Search Google Places in Pakistan
 
 ## A MEAN Stack Application
 
 [![Build Status](https://img.shields.io/badge/Open-Repository-green.svg)](https://github.com/alamgirqazi/GoogleMapusingAngular/)
 
-##### How to run: clone the repository and run 'npm install' followed by 'bower install'. then run 'node server' and navigate to
+## How to run:
+### clone the repository and run 'npm install'
+### followed by 'bower install'.
+### then run 'node server' and navigate to http://localhost:3000/
 
 the url link for Heroku will be published soon.
 
@@ -20,5 +23,5 @@ Materialize css
 angular-google-places-autocomplete by kuhnza https://github.com/kuhnza/angular-google-places-autocomplete
 (contains AngularJs directives based on Google Map v3)
 
-ngmap  https://ngmap.github.io/
+ngmap https://ngmap.github.io/
 (for the google map)
