@@ -2,7 +2,8 @@
 
 <div class="row">
     <div class="col m10">
-        <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="/Signin" >Home</a>
+        <a ng-show="!Authentication.user" class="waves-effect waves-light btn" href="/signout">Home</a>
+        <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="/Signin">Profile</a>
         <h4 style="text-align: center;color:white"> Find Locations on Google Map</h4>
 
     </div>
@@ -18,7 +19,6 @@
     <marker  position="current" centered="true"></marker>
     <!--position="current" ng-repeat="p in vm.positions" position="{{p}}"-->
 </ng-map>
-
 </div>
     <!--animation="Animation.BOUNCE"-->
     <div class="col-md-7">
@@ -36,10 +36,9 @@
                        force-selection="true"
                        class="form-control"
                        options="autocompleteOptions"
-                       id="search_term_value"/>    <!--<input class="form-control" g-places-autocomplete  ng-change="myFunc()" options="autocompleteOptions"  ng-model="place"/>-->
+                       id="search_term_value"/>
             </form>
-            <!--<h5>Result:</h5>-->
-            <!--<pre>{{place | json}}</pre>-->
+
         </div>
     </div>
 
@@ -77,23 +76,8 @@
 </div>
 
     <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="#" >recent searches</a>
-
 </div>
 </div>
-        <!--<div ng-controller="googleMapController">-->
-    <!--<ng-map zoom="14 center="[40.74, -74.18]" >-->
-        <!--<marker position="current" animation="Animation.BOUNCE" centered="true"></marker>-->
-    <!--</ng-map>-->
-<!--</div>-->
-
-<!--<br><br><br>-->
-<!--<hr>-->
-
-<!--<ng-map zoom="11" center="[0,0]">-->
-    <!--<shape id="circle" name="circle" centered="true"-->
-           <!--stroke-color='#FF0000' stroke-opacity="0.8"stroke-weight="2"-->
-           <!--center="current-position" radius="4000" editable="true" ></shape>-->
-<!--</ng-map>-->
     </div>
-        </div>
+    </div>
     </div>

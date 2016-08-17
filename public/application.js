@@ -2,11 +2,11 @@
  var mainApplicationModule = angular.module('mean', ['ngResource','ngMap','google.places','ngRoute', 'users', 'example','articles']);
  mainApplicationModule.config(['$locationProvider','$routeProvider', function ($locationProvider,$routeProvider) {
     $locationProvider.hashPrefix('!');
-     $routeProvider.when('/maps',
-         {
-             templateUrl:'views/maps.html',
-             authorization: true
-         });
+     // $routeProvider.when('/maps',
+     //     {
+     //         templateUrl:'views/maps.html',
+     //         authorization: true
+     //     });
      $routeProvider.when('/googleMap',
          {
              templateUrl:'views/googleMap.html'

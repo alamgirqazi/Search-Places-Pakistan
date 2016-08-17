@@ -6,8 +6,8 @@
 
 ## How to run:
 ### clone the repository and run 'npm install'
-### followed by 'bower install'.
-### then run 'node server' and navigate to http://localhost:3000/
+### run 'bower install'
+### run 'node server' and navigate to http://localhost:3000/
 
 the url link for Heroku will be published soon.
 
