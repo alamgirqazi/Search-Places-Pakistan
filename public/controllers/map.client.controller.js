@@ -6,7 +6,7 @@ angular.module('mean')
         //
         $scope.searchRecent = function () {
             $http.get('/api/googleSearch/savedSearches').then(function (res) {
-                $scope.returnedSearches = res;
+                $scope.returnedSearches = res.data;
                 console.log('button pressed');
                 console.log($scope.returnedSearches);
             });

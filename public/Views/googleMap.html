@@ -79,6 +79,16 @@
                     <a ng-show="Authentication.user" class="waves-effect waves-light btn" ng-click="searchRecent()">recent
                         searches</a>
                 </div>
+
+                <div ng-show="Authentication.user" ng-repeat="r in returnedSearches">
+                  <p>  {{r.name}} </p>
+                    <p>   {{r.formatted_address}} </p>
+                    <br>
+                </div>
+
+
+
+
             </div>
         </div>
     </div>
