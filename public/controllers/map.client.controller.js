@@ -2,21 +2,24 @@ angular.module('mean')
     .controller('exampleController', function ($scope, NgMap, $http, Authentication) {
 
         $scope.Authentication = Authentication;
-        // $scope.currentPage = 0;
-        // $scope.pageSize = 10;
-        // // $scope.data = [];
-        // $scope.numberOfPages = function () {
-        //     return Math.ceil($scope.data.length / $scope.pageSize);
-        // };
+
+        $scope.btnClick = false;
 
         $scope.searchRecent = function () {
             $http.get('/api/googleSearch/savedSearches').then(function (res) {
+                $scope.btnClick = true;
                 $scope.returnedSearches = res.data;
                 console.log('button pressed');
                 console.log($scope.returnedSearches);
-
                      });
         };
+            // $scope.searchProfileRecent = function () {
+        //     // $http.get('/api/googleSearch/savedSearches').then(function (res) {
+        //     //     $scope.returnedSearches = res.data;
+        //         console.log('button pressed in profile ');
+        //         // console.log($scope.returnedSearches);
+        //              // });
+        // };
 
         NgMap.getMap().then(function (map) {
             console.log(map.getCenter().lat(), map.getCenter().lng());

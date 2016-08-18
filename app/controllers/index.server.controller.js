@@ -22,8 +22,9 @@ exports.render = function (req, res) {
 
 exports.showSearches = function (req,res) {
 
-    GoogleSearch.find().where('creator').equals(req.user._id).
-    skip(0).limit(10).sort('-created').populate('creator').exec(function (err, googleSearch) {
+    // skip(0).limit(10)
+
+    GoogleSearch.find().where('creator').equals(req.user._id).sort('-created').populate('creator').exec(function (err, googleSearch) {
     if (err) {
             return res.status(400).send({message: getErrorMessages(err)});
     }

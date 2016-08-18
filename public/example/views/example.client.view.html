@@ -29,7 +29,7 @@
             <h2 style="color:white">Hello, <span data-ng-bind="authentication.user.fullName"></span></h2>
         </div>
             <div class="col m2">
-        <a class="waves-effect waves-light btn" href="/signout">Signout</a>
+         <a  class="waves-effect waves-light btn" href="/signout">Signout</a>
             </div>
         </div>
 
@@ -41,12 +41,21 @@
         <ul>
             <!--<input type="submit" class="waves-effect waves-light btn" style="left: 30%;" name="Sign In"/>-->
 
-            <li><a class="waves-effect waves-light btn" href="/#!/googleMap">Google Map Search</a></li>
+            <li><a style="left: 15%" class="waves-effect waves-light btn" href="/#!/googleMap">Google Map Search</a></li>
           <br><br>
-            <li><button class="waves-effect waves-light btn">Show Recent Searches</button></li>
-            <br><br>
-            <!--<li><a href="/#!/articles/create">Create Article</a></li>-->
+
+            <!--<li><button ng-click="searchProfileRecent()" style="left: 5%" class="waves-effect waves-light btn">Show Recent Searches</button></li>-->
+            <!--<br><br>-->
+
         </ul>
+
+            <!--<div  ng-repeat="r in returnedSearches">-->
+                <!--<p style="color:white">  {{r.name}} </p>-->
+                <!--<p style="color:white">   {{r.formatted_address}} </p>-->
+                <!--<hr>-->
+                <!--<br>-->
+            <!--</div>-->
+
     </div>
                 </div>
 </div>

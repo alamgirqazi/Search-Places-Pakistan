@@ -10,6 +10,7 @@
             <a ng-show="Authentication.user" class="waves-effect waves-light btn" href="/signout">SignOut!</a>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-5">
             <br>
@@ -74,13 +75,19 @@
 
                     <a ng-show="Authentication.user" class="waves-effect waves-light btn" ng-click="searchRecent()">recent
                         searches</a>
+                    <hr>
+
                 </div>
 
-                <div ng-show="Authentication.user" ng-repeat="r in returnedSearches">
-                  <p style="color:white">  {{r.name}} </p>
+                <div ng-show="Authentication.user" >
+                    <div  ng-show = "btnClick=== true;" style="height: 300px; width: 300px; overflow-y: scroll">
+                        <div ng-repeat="r in returnedSearches">
+                    <p style="color:white">  {{r.name}} </p>
                     <p style="color:white">   {{r.formatted_address}} </p>
                     <br>
+                        </div>
                 </div>
+                    </div>
             </div>
         </div>
     </div>
