@@ -9,18 +9,14 @@ angular.module('mean')
             $http.get('/api/googleSearch/savedSearches').then(function (res) {
                 $scope.btnClick = true;
                 $scope.returnedSearches = res.data;
-                console.log('button pressed');
+                // console.log('button pressed');
+                // console.log($scope.returnedSearches);
+                $scope.returnedSearches.reverse();
+                console.log('after reverse');
                 console.log($scope.returnedSearches);
-                     });
-        };
-            // $scope.searchProfileRecent = function () {
-        //     // $http.get('/api/googleSearch/savedSearches').then(function (res) {
-        //     //     $scope.returnedSearches = res.data;
-        //         console.log('button pressed in profile ');
-        //         // console.log($scope.returnedSearches);
-        //              // });
-        // };
 
+            });
+        };
         NgMap.getMap().then(function (map) {
             console.log(map.getCenter().lat(), map.getCenter().lng());
 

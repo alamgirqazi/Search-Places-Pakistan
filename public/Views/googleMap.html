@@ -75,15 +75,17 @@
 
                     <a ng-show="Authentication.user" class="waves-effect waves-light btn" ng-click="searchRecent()">recent
                         searches</a>
-                    <hr>
+                    <br>
+                     <br>
 
                 </div>
 
                 <div ng-show="Authentication.user" >
-                    <div  ng-show = "btnClick=== true;" style="height: 300px; width: 300px; overflow-y: scroll">
+                    <div  ng-show = "btnClick=== true;" style="height: 300px; width: 600px; overflow-y: scroll">
                         <div ng-repeat="r in returnedSearches">
                     <p style="color:white">  {{r.name}} </p>
                     <p style="color:white">   {{r.formatted_address}} </p>
+                            <hr>
                     <br>
                         </div>
                 </div>
