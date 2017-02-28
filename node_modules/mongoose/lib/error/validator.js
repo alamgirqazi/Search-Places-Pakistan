@@ -3,7 +3,6 @@
  */
 
 var MongooseError = require('../error.js');
-var errorMessages = MongooseError.messages;
 
 /**
  * Schema validator error
@@ -16,7 +15,7 @@ var errorMessages = MongooseError.messages;
 function ValidatorError(properties) {
   var msg = properties.message;
   if (!msg) {
-    msg = errorMessages.general.default;
+    msg = MongooseError.messages.general.default;
   }
 
   var message = this.formatMessage(msg, properties);
@@ -31,6 +30,7 @@ function ValidatorError(properties) {
   this.kind = properties.type;
   this.path = properties.path;
   this.value = properties.value;
+  this.reason = properties.reason;
 }
 
 /*!
