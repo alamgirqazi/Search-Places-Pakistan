@@ -30,15 +30,15 @@ ngmap https://ngmap.github.io/
 
 ### Homepage
 
-<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/2.PNG" width="200" height="350" />
+<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/2.PNG" width="600" height="350" />
 
 ### Login 
-<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/4.PNG" width="200" height="350" />
+<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/4.PNG" width="600" height="350" />
 
 ### Sign Up
-<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/3.PNG" width="200" height="350" />
+<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/3.PNG" width="600" height="350" />
 
 ### Search Places
-<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/1.PNG" width="200" height="350" />
+<img src="https://github.com/alamgirqazi/Search-Places-Pakistan/blob/master/public/img/1.PNG" width="600" height="350" />
 
 
