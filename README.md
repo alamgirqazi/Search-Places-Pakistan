@@ -5,14 +5,13 @@
 [![Build Status](https://img.shields.io/badge/Open-Repository-green.svg)](https://github.com/alamgirqazi/GoogleMapusingAngular/)
 
 ## How to run:
+
 ### clone the repository and run 'npm install'
-### run 'bower install'
 ### run 'node server' and navigate to http://localhost:3000/
 
-the url link for Heroku will be published soon.
 
 tools/libraries used:
-MongoDB, AngularJs, Express, Node (Obviously)
+MongoDB, AngularJs 1, Expressjs.
 
 Mongoose as ODM for Mongodb.
 
