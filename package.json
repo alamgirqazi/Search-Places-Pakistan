@@ -1,7 +1,7 @@
 {
-  "name": "mean",
+  "name": "Search-places-pakistan",
   "version": "1.0.0",
-  "description": "A mean stack learning app",
+  "description": "A MEAN Stack app which searches for places using Google Places API and returns distance from current location and much more",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
